@@ -154,7 +154,7 @@ pcl::ASCIIReader::read (
    std::vector<std::string> tokens;
    boost::algorithm::split (tokens, line,boost::algorithm::is_any_of (sep_chars_), boost::algorithm::token_compress_on);
 
-   if (tokens.size () != fields_.size ()) 
+   if (tokens.size () < fields_.size ())
      continue;
 
    std::uint32_t offset = 0;

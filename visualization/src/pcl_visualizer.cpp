@@ -439,6 +439,11 @@ void pcl::visualization::PCLVisualizer::setupStyle ()
   style_->setCloudActorMap (cloud_actor_map_);
   style_->setShapeActorMap (shape_actor_map_);
   style_->UseTimersOn ();
+  rens_->InitTraversal ();
+  // camera is ortho by default
+  vtkRenderer* renderer = nullptr;
+  while ((renderer = rens_->GetNextItem ()))
+    renderer->GetActiveCamera()->SetParallelProjection(true);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////

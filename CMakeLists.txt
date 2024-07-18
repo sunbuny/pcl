@@ -26,6 +26,10 @@ endif()
 project(PCL VERSION 1.14.1.99)
 string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 
+# Comment this line if you do not need debug output
+STRING(REPLACE "/DNDEBUG" "" CMAKE_CXX_FLAGS_RELWITHDEBINFO ${CMAKE_CXX_FLAGS_RELWITHDEBINFO})
+STRING(REPLACE "/O2" "/Od" CMAKE_CXX_FLAGS_RELWITHDEBINFO ${CMAKE_CXX_FLAGS_RELWITHDEBINFO})
+
 if(MSVC AND ("${MSVC_VERSION}" LESS 1910))
   message(FATAL_ERROR "The compiler versions prior to Visual Studio version 2017 are not supported. Please upgrade to a newer version or another compiler!")
 endif()

@@ -1,0 +1,1 @@
+PCL_ADD_EXAMPLE(example_read_ascii_point_cloud FILES example_read_ascii_point_cloud.cpp LINK_WITH pcl_common pcl_io pcl_visualization)
